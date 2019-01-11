@@ -107,25 +107,25 @@ class PersonalDetails extends Component {
                             choices={data.title}
                         />
                     </Grid>
+                
                     <Grid item xs={3}>
                         <TextInput
-                            source="Personal_Details.f_name"
-                            label="First Name"
-                            // validate={checkCharacter}
-                        />
-                    </Grid>
-                    <Grid item xs={3}>
-                        <TextInput
-                            source="Personal_Details.m_name"
-                            label="Middle Name"
+                            source="Personal_Details.full_name"
+                            label="Full Name"
                             // validate={checkCharacter1}
+                            inputProps={{placeholder:'Arachige Roshan Mohan Rathnayake '}}
+                            validate={required()}
                         />
                     </Grid>
                     <Grid item xs={3}>
                         <TextInput
-                            source="Personal_Details.l_name"
-                            label="Last Name"
+                            source="Personal_Details.in_name"
+                            label="Name with Initials in English"
+                            style = {{width:300}}
                             // validate={checkCharacter}
+                            inputProps={{placeholder:'A.R.M. Rathnayaka'}}
+                            validate={required()}
+                            
                         />
                     </Grid>
                 </Grid>
@@ -134,29 +134,29 @@ class PersonalDetails extends Component {
                     direction="row"
                     justify="flex-start"
                     alignItems="stretch">
-                    <Grid item xs={3}>
-                        <TextInput
-                            source="Personal_Details.in_name"
-                            label="Name with Initials in English"
-                            // validate={checkCharacter}
-                        />
-                    </Grid>
+                 
                     <Grid item xs={3}>
                         <TextInput
                             source="Personal_Details.si_in_name"
                             label="Name with Initials in Sinhala"
+                            inputProps={{placeholder:'ආර්.ආර්.රත්නායක'}}
+                            style = {{width:300}}
+                            validate={required()}
                         />
                     </Grid>
                     <Grid item xs={3}>
                         <TextInput
                             source="Personal_Details.ta_in_name"
                             label="Name with Initials in Tamil"
+                            inputProps={{placeholder:'எ.ர்.எம்.ரத்நாயக்க'}}
+                            style = {{width:300}}
                         />
                     </Grid>
                     <Grid item xs={3}>
                         <DateInput
                             source="Personal_Details.dob"
                             label="Date of Birth"
+                            validate={required()}
                             // validate={required()}
                         />
                     </Grid>
@@ -171,6 +171,7 @@ class PersonalDetails extends Component {
                             source="Personal_Details.NIC"
                             label="NIC Number"
                             // validate={validateNIC}
+                            validate={required()}
                         />
                     </Grid>
                     <Grid item xs={3}>
@@ -178,23 +179,39 @@ class PersonalDetails extends Component {
                             source="Personal_Details.ethinicity"
                             label="Ethnicity"
                             choices={data.ethinicity}
+                            validate={required()}
+                        />
+                    </Grid>
+
+                    <Grid item xs={3}>
+                        <SelectInput
+                            source="Personal_Details.religion"
+                            label="Religion"
+                            choices={data.religion}
+                            validate={required()}
                         />
                     </Grid>
                     <Grid item xs={3}>
                         <RadioButtonGroupInput
                             source="Personal_Details.gender"
                             label="Gender"
-                            choices={data.gender} />
+                            choices={data.gender} 
+                            validate={required()}/>
+                            
                     </Grid>
+                 
                     <Grid item xs={3}>
                         <Provider familyTab={this.state.familyTab}>
                             <SelectInput
                                 source="Personal_Details.civil_status"
                                 label="Civil Status"
                                 choices={data.civil_status}
-                                onChange={this.handleChange} />
+                                onChange={this.handleChange} 
+                                validate={required()}/>
                         </Provider>
                     </Grid>
+
+                  
                 </Grid>
                 <Grid
                     container
