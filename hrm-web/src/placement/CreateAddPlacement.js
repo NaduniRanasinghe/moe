@@ -5,6 +5,7 @@ import { DateInput, FileInput, required, SelectInput, TextInput } from 'react-ad
 import data from '../data';
 import DesignationsSelectInput from '../selectInputs/designations';
 import WorkingPlaceSelectInput from '../selectInputs/workingPlaces';
+import ServiceSelectInput from '../selectInputs/service';
 
 
 const styles = theme => ({
@@ -43,11 +44,70 @@ const CreateAddPlacements = ({ permissions, classes, formData, ...props }) => (
             <Grid item xs={3}>
                 <SelectInput
                     source="grade"
-                    label="Present SLEAS Grade"
+                    label="Present Grade"
                     choices={data.grade}
                 />
             </Grid>
+
+            
             <Grid item xs={3}>
+                <SelectInput
+                    source="class"
+                    label="Present Class"
+                    choices={data.class}
+                />
+            </Grid>
+            <Grid item xs={3}>
+            <DateInput
+                    source="psc_letter_date"
+                    label="PSC Letter Date"
+                    validate={required()}
+                />
+                </Grid>
+                <Grid item xs={3}>
+               
+               <ServiceSelectInput></ServiceSelectInput>
+           </Grid>
+
+            <Grid item xs={3}>
+                <SelectInput
+                    source="class"
+                    label="Present Class"
+                    choices={data.class}
+                />
+            </Grid>
+            <Grid item xs={3}>
+            <DateInput
+                    source="psc_letter_date"
+                    label="PSC Letter Date"
+                    validate={required()}
+                />
+                </Grid>
+                <Grid item xs={3}>
+               
+               <ServiceSelectInput></ServiceSelectInput>
+           </Grid>
+            <Grid item xs={3}>
+                <SelectInput
+                    source="class"
+                    label="Present Class"
+                    choices={data.class}
+                />
+            </Grid>
+            <Grid item xs={3}>
+            <DateInput
+                    source="psc_letter_date"
+                    label="PSC Letter Date"
+                    validate={required()}
+                />
+                </Grid>
+                <Grid item xs={3}>
+               
+               <ServiceSelectInput></ServiceSelectInput>
+           </Grid>
+
+            <Grid item xs={3}>
+               
                 <DesignationsSelectInput></DesignationsSelectInput>
             </Grid>
         </Grid>
@@ -77,23 +137,21 @@ const CreateAddPlacements = ({ permissions, classes, formData, ...props }) => (
             <Grid item xs={3}>
                 <TextInput
                     source="off_letter_no"
-                    label="Offer Letter No"
+                    label="Officer Reference No"
+                    validate={required()}
+                    formClassName={classes.left}
+                ></TextInput>
+            </Grid>
+            <Grid item xs={3}>
+                <TextInput
+                    source="psc_letter_no"
+                    label="PSC Letter No"
                     validate={required()}
                     formClassName={classes.left}
                 ></TextInput>
             </Grid>
         </Grid>
-        <Grid
-            container
-            direction="row"
-            justify="flex-start"
-            alignItems="stretch">
-            <FileInput
-                source="off_letter"
-                label="Offer Letter"
-                formClassName={classes.left} >
-            </FileInput>
-        </Grid>
+    
     </Grid>
 )
 

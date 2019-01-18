@@ -46,4 +46,4 @@ class ProvincePrefix extends AbstractMigration
 //         $table->update();
 
 //     }
-// }
+ }
